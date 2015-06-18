@@ -1,7 +1,7 @@
 Package.describe({
   name: 'ndemoreau:azimulti-core',
   summary: 'Azimuth multilangual CMS core code',
-  version: '0.4.1',
+  version: '0.4.2',
   git: 'https://github.com/ndemoreau/azimulti-core/ '
 });
 

@@ -1,0 +1,33 @@
+<template name="assets">
+  <div class="assets">
+    <h1>Assets</h1>
+    <div class="file-upload-container">
+      <label>Select file(s) to upload:</label>
+      <input name="files" type="file" class="fileUploader" multiple>
+    </div>
+    <table class='azimuth-table file-list'>
+      {{#each files}}
+        <tr>
+          <td>
+            <a href="{{url store='default'}}">
+              <img src="{{#if isImage}}{{url store='default'}}{{else}}/packages/ndemoreau_azimulti-core/img/file-large.png{{/if}}">
+            </a>
+          </td>
+          <td>
+            <a href="{{url store='default'}}">{{name}}</a>
+            <br />
+            <span class="file-date">{{formattedTime}}</span>
+            <span class="file-size">{{prettySize}}</span>
+          </td>
+          <td>
+            <a class="delete-file remove" href="#"><i class="icon-cross"></i></a>
+          </td>
+        </tr>
+      {{else}}
+        <tr>
+          <td class='no-files'>No files uploaded.</td>
+        </tr>
+      {{/each}}
+    </table>
+  </div>
+</template>

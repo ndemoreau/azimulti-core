@@ -1,0 +1,76 @@
+<template name="wysiwyg">
+  <div class="azimuth-form-wysiwyg">
+    <label>{{label}} {{language}}</label>
+    <textarea class="html-editor" id="{{uniqueId}}" name="{{fieldName}}" rows="5" placeholder="Contents">{{value}}</textarea>
+  </div>
+
+  <div class="azimuth-modal-container" id="wysiwygFileModal">
+    <div class="azimuth-modal">
+      <div class="modal-header">
+        <h3>Insert File Link</h3>
+      </div>
+      <div class="modal-body">
+        <table class='azimuth-table file-list'>
+          {{#each fileList}}
+            <tr>
+              <td>
+                <a class="insert-file" href="{{url store='default'}}">
+                  <img src="{{#if isImage}}{{url store='default'}}{{else}}/packages/ndemoreau_azimulti-core/img/file-large.png{{/if}}">
+                </a>
+              </td>
+              <td>
+                <a class="insert-file" href="{{url store='default'}}">{{name}}</a>
+                <br />
+                <span class="file-date">{{formattedTime}}</span>
+                <span class="file-size">{{formattedSize}}</span>
+              </td>
+            </tr>
+          {{else}}
+            <tr>
+              <td class='no-files'>No files uploaded.  Go to your asset library to add some!</td>
+            </tr>
+          {{/each}}
+        </table>
+      </div>
+      <div class="azimuth-buttons clear">
+        <a class="azimuth-button text right cancel close">Cancel</a>
+      </div>
+    </div>
+    <div class="azimuth-modal-bg close"></div>
+  </div>
+
+  <div class="azimuth-modal-container" id="wysiwygImageModal">
+    <div class="azimuth-modal">
+      <div class="modal-header">
+        <h3>Insert Image</h3>
+      </div>
+      <div class="modal-body">
+        <table class='azimuth-table file-list'>
+          {{#each imageList}}
+            <tr>
+              <td>
+                <a class="insert-image" href="{{url store='default'}}">
+                  <img src="{{#if isImage}}{{url store='default'}}{{else}}/packages/ndemoreau_azimulti-core/img/file-large.png{{/if}}">
+                </a>
+              </td>
+              <td>
+                <a class="insert-image" href="{{url store='default'}}">{{name}}</a>
+                <br />
+                <span class="file-date">{{formattedTime}}</span>
+                <span class="file-size">{{formattedSize}}</span>
+              </td>
+            </tr>
+          {{else}}
+            <tr>
+              <td class='no-files'>No files uploaded.  Go to your asset library to add some!</td>
+            </tr>
+          {{/each}}
+        </table>
+      </div>
+      <div class="azimuth-buttons clear">
+        <a class="azimuth-button text right cancel close">Cancel</a>
+      </div>
+    </div>
+    <div class="azimuth-modal-bg close"></div>
+  </div>
+</template>

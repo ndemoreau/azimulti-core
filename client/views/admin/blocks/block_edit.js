@@ -20,6 +20,7 @@ Template.block_edit.events = {
     Session.set('blockFields', Azimuth.registry.blockTemplates[template].fields);
     Session.set('addBlock', true);
     Azimuth.adminPanel.blockEdit.settings.template = template;
+    debugger;
   },
   'change .block-tag-selector': function (e) {
     // Load block form in from registry
@@ -182,6 +183,7 @@ Template.block_edit.helpers ({
 
 Template.blockField.helpers ({
     languages: function() {
+        debugger;
         if (this.multiLanguages)
             return Azimuth.collections.Settings.findOne().languages.split(",");
         else

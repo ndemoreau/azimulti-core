@@ -112,6 +112,7 @@ Template.renderPageBlock.helpers({
       return Template.block_set.extend({blocks: blocks});
     } else {
       var block = Azimuth.collections.Blocks.findOne(pageBlock.block);
+      debugger;
       return Azimuth.utils.renderBlock(block);
     }
   }

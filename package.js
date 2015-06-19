@@ -12,10 +12,10 @@ Package.on_use(function (api) {
     'less@1.0.11', 'spiderable@1.0.5', 'standard-app-packages@1.0.3'], 'client');
 
   // Use the meteorite smart packages specified in smart.json
-  api.use(['alanning:roles@1.2.13', 'iron:router@1.0.1', 'multiply:iron-router-progress@1.0.0', 'mrt:numeral@0.0.1', 'cfs:standard-packages@0.0.2', 'cfs:filesystem@0.0.0'], 'client');
+  api.use(['alanning:roles@1.2.13', 'iron:router@1.0.1', 'multiply:iron-router-progress@1.0.0', 'mrt:numeral@0.0.1', 'cfs:standard-packages@0.0.2', 'cfs:filesystem@0.0.0', 'cfs:gridfs@0.0.33'], 'client');
 
   // And ensure we have the packages we need server-side available to the server
-  api.use(['accounts-base', 'accounts-password', 'spiderable', 'alanning:roles@1.2.13', 'cfs:standard-packages', 'cfs:filesystem'], 'server');
+  api.use(['accounts-base', 'accounts-password', 'spiderable', 'alanning:roles@1.2.13', 'cfs:standard-packages', 'cfs:filesystem', 'cfs:gridfs'], 'server');
 
   api.addFiles('server/server_init.js', 'server');
 
@@ -55,13 +55,11 @@ Package.on_use(function (api) {
   api.add_files('client/css/fonts/raleway/raleway-bold.svg', 'client');
   api.add_files('client/css/fonts/raleway/raleway-bold.ttf', 'client');
   api.add_files('client/css/fonts/raleway/raleway-bold.woff', 'client');
-  api.add_files('client/blocks/ten_column/ten_column.js', 'client');
-  api.add_files('client/blocks/eight_column/eight_column.js', 'client');
-  api.add_files('client/blocks/four_column/four_column.js', 'client');
-  api.add_files('client/blocks/six_column/six_column.js', 'client');
-  api.add_files('client/blocks/three_column/three_column.js', 'client');
+  api.add_files('client/blocks/block_multi_with_title/block_multi_with_title.js', 'client');
+  api.add_files('client/blocks/block_multi/block_multi.js', 'client');
+  api.add_files('client/blocks/block_multi_with_title/block_multi_with_title.js', 'client');
+  api.add_files('client/blocks/block/block.js', 'client');
   api.add_files('client/blocks/block_with_title/block_with_title.js', 'client');
-  api.add_files('client/blocks/two_column/two_column.js', 'client');
   api.add_files('client/pages/home_page/home_page.js', 'client');
   api.add_files('client/pages/page_default/page_default.js', 'client');
   api.add_files('client/pages/sidebar_left/sidebar_left.js', 'client');

@@ -17,7 +17,7 @@ Azimuth.collections = {
   Settings: new Meteor.Collection('settings'),
   Navigation: new Meteor.Collection('navigation'),
   UserData: new Meteor.Collection('userData'),
-  Assets: new FS.Collection('assets', {stores: [new FS.Store.FileSystem("default", {path: "~/azimuth_uploads"})]})
+  Assets: new FS.Collection('assets', {stores: [new FS.Store.GridFS("default", {})]})
 };
 
 // Set a session variable to tell the client if users exist.
